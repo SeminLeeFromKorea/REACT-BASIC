@@ -1,0 +1,19 @@
+.app_wrap {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: purple;
+    height: 100vh; /* 전체화면 */
+}
+
+.app_wrap .app_item {
+    flex-basis: 20%;
+    padding: 20px;
+}
+
+:global .input_control {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    color: red;
+}

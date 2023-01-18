@@ -33,12 +33,37 @@ const IterationComponentQ2 = () => {
 
     // 4. 숙제: 검색 기능 만들기
 
+    const [input, setInput] = useState('');
+
+
+    const handleInput = (e) => {
+        setInput(e.target.value);
+    }
+
+    const handleList2 = () => {
+
+        const handleArr2 = data.filter((item) => {
+
+            const a = item.type.toLowerCase();
+            const b = input.toLowerCase();
+            const c = item.teacher.toLowerCase();
+            return(
+                a.includes(b) || c.includes(b)
+            );
+
+        });
+        setList(handleArr2);
+        
+
+    }
 
     return (
         <>
         <hr/>
         <h3>컴포넌트 반복 실습</h3>
         <h3>검색기능 - 대소문자를 구분하지 않고 teacher, type에 포함된 데이터만 필터링</h3>
+        <input type="text" onChange={handleInput}/>
+        <button type="button" onClick={handleList2}>클릭미</button><br/>
         <select onChange={handleList}>
             {newArr}
         </select>
